@@ -1,0 +1,16 @@
+[
+    {
+        "email": "li@gmail.com",
+        "password": "12345",
+        "Name": "Alessandro Luizao",
+        "LastName": "Reyes Varguez",
+        "PhoneNumber": "9837336211"
+    },
+    {
+        "email": "nefta@gmail.com",
+        "password": "12345",
+        "Name": "Neftali Alexandro",
+        "LastName": "Sanchez Jimenez",
+        "PhoneNumber": "9831234567"
+    }
+]
