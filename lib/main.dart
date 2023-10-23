@@ -1,3 +1,4 @@
+import 'package:ekahanfirebase/themes/theme_one.dart';
 import 'package:flutter/material.dart';
 //Firebase:
 import 'package:firebase_core/firebase_core.dart';
@@ -7,6 +8,7 @@ import 'package:ekahanfirebase/screens/home_screen.dart';
 import 'package:ekahanfirebase/screens/login_screen.dart';
 import 'package:ekahanfirebase/screens/register_screen.dart';
 import 'package:ekahanfirebase/screens/welcome_screen.dart';
+//Tema de color
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -15,7 +17,7 @@ void main() async {
   );
   runApp(MaterialApp(
     debugShowCheckedModeBanner: false,
-    theme: ThemeData.dark(),
+    theme: themeDataUno,
     home: const WelcomeScreen(),
     initialRoute: WelcomeScreen.routeName,
     routes: <String, WidgetBuilder>{
