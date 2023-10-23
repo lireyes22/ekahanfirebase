@@ -7,21 +7,14 @@ ThemeData lightThemeData = ThemeData(
   // Colores de texto
   textTheme: const TextTheme(
     titleLarge: TextStyle(
-        color: Color(0xFF333333), fontSize: 20.0), // Texto de encabezado
+        color: Color.fromARGB(255, 96, 59, 27),
+        fontSize: 20.0), // Texto de encabezado
     bodyMedium:
-        TextStyle(color: Color(0xFF333333), fontSize: 16.0), // Texto de cuerpo
+        TextStyle(color: Color(0xFF00897B), fontSize: 16.0), // Texto de cuerpo
   ),
 
   // Fondo
   scaffoldBackgroundColor: const Color(0xFFF0FFF4), // Fondo de los widgets
-
-  // AppBar
-  appBarTheme: const AppBarTheme(
-    color: Color(0xFF00897B), // Color de la barra de la aplicación
-    iconTheme: IconThemeData(
-        color: Color(
-            0xFFFFFFFF)), // Color de los iconos en la barra de la aplicación
-  ),
 
   // Botones
   buttonTheme: const ButtonThemeData(

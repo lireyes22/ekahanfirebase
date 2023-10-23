@@ -1,5 +1,3 @@
-import 'package:ekahanfirebase/themes/theme_dark.dart';
-import 'package:ekahanfirebase/themes/theme_light.dart';
 import 'package:flutter/material.dart';
 //Firebase:
 import 'package:firebase_core/firebase_core.dart';
@@ -10,6 +8,8 @@ import 'package:ekahanfirebase/screens/login_screen.dart';
 import 'package:ekahanfirebase/screens/register_screen.dart';
 import 'package:ekahanfirebase/screens/welcome_screen.dart';
 //Tema de color
+//import 'package:ekahanfirebase/themes/theme_dark.dart';
+import 'package:ekahanfirebase/themes/theme_light.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -18,7 +18,7 @@ void main() async {
   );
   runApp(MaterialApp(
     debugShowCheckedModeBanner: false,
-    theme: darkThemeData,
+    theme: lightThemeData,
     home: const WelcomeScreen(),
     initialRoute: WelcomeScreen.routeName,
     routes: <String, WidgetBuilder>{

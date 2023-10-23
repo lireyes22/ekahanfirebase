@@ -9,13 +9,17 @@ class TextFieldPrimary extends StatelessWidget {
   final ValueChanged<String>? onChanged;
   final Color? textColor;
   final Color? bgColor;
+  final double? fontSize;
   const TextFieldPrimary(
       {super.key,
       this.obscureTxt = false,
       this.labelTxt = "",
       this.allNumbers = false,
       this.passwordController,
-      this.onChanged, this.textColor, this.bgColor});
+      this.onChanged,
+      this.textColor,
+      this.bgColor,
+      this.fontSize});
 
   @override
   Widget build(BuildContext context) {
@@ -28,26 +32,28 @@ class TextFieldPrimary extends StatelessWidget {
       textAlign: TextAlign.center,
       obscureText: obscureTxt,
       decoration: InputDecoration(
-        border: const OutlineInputBorder(
+        floatingLabelStyle: TextStyle(
+            color: Theme.of(context).colorScheme.tertiary, fontSize: fontSize),
+        border: OutlineInputBorder(
             //estando normal
-            borderRadius: BorderRadius.all(Radius.circular(32)),
-            borderSide: BorderSide(color: Color.fromARGB(255, 28, 96, 27))),
-        enabledBorder: const OutlineInputBorder(
+            borderRadius: const BorderRadius.all(Radius.circular(32)),
+            borderSide: BorderSide(color: Theme.of(context).primaryColorDark)),
+        enabledBorder: OutlineInputBorder(
             //estando habilitado
-            borderRadius: BorderRadius.all(Radius.circular(32)),
-            borderSide:
-                BorderSide(width: 1.0, color: Color.fromARGB(255, 28, 96, 27))),
-        focusedBorder: const OutlineInputBorder(
+            borderRadius: const BorderRadius.all(Radius.circular(32)),
+            borderSide: BorderSide(
+                width: 1.0, color: Theme.of(context).primaryColorDark)),
+        focusedBorder: OutlineInputBorder(
             //si estan escribiendo sobre el
-            borderRadius: BorderRadius.all(Radius.circular(32)),
+            borderRadius: const BorderRadius.all(Radius.circular(32)),
             borderSide:
-                BorderSide(width: 2.0, color: Color.fromARGB(255, 20, 67, 20))),
+                BorderSide(width: 2.0, color: Theme.of(context).primaryColor)),
         labelText: labelTxt,
         suffixIcon: passwordController,
-        labelStyle: TextStyle(
-          color: textColor,
-        ),
+        labelStyle:
+            TextStyle(color: Theme.of(context).hintColor, fontSize: fontSize),
       ),
+      style: TextStyle(fontSize: fontSize),
       onChanged: onChanged,
     );
   }

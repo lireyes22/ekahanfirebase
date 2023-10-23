@@ -9,25 +9,28 @@ class LogoRow extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(children: <Widget>[
-      Text(
-        "Ek Ahan",
-        textAlign: TextAlign.center,
-        style: TextStyle(
-          fontFamily: 'MayaUno', // Cambia 'YourFont' a la fuente deseada
-          fontSize: height, // Tamaño de fuente
-          fontWeight: FontWeight
-              .bold, // Peso de la fuente (puedes ajustarlo según tus preferencias)
-          color: txtColor, // Color del texto
-          // Otros atributos de estilo, como letterSpacing, decoration, etc.
-        ),
-      ),
-      const SizedBox(height: 25),
-      Image.asset(
-        "assets/images/colibri3.png",
-        alignment: Alignment.center,
-        height: heightIcon,
-      ),
-    ]);
+    return Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: <Widget>[
+          Text(
+            "Ek Ahan",
+            textAlign: TextAlign.center,
+            style: TextStyle(
+              fontFamily: 'MayaUno', // Cambia 'YourFont' a la fuente deseada
+              fontSize: height, // Tamaño de fuente
+              fontWeight: FontWeight
+                  .bold, // Peso de la fuente (puedes ajustarlo según tus preferencias)
+              color: txtColor, // Color del texto
+              // Otros atributos de estilo, como letterSpacing, decoration, etc.
+            ),
+          ),
+          const SizedBox(height: 25),
+          Image.asset(
+            "assets/images/colibri3.png",
+            alignment: Alignment.center,
+            height: heightIcon,
+          ),
+        ]);
   }
 }

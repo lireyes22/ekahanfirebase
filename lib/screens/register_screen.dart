@@ -36,8 +36,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
               children: <Widget>[
                 const SizedBox(height: 20),
                 const LogoRow(
-                  height: 30,
-                  heightIcon: 100,
+                  height: 50,
+                  heightIcon: 110,
                 ),
                 const SizedBox(height: 20),
                 //Caja de texto para el Email

@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 
 ThemeData darkThemeData = ThemeData(
@@ -16,14 +15,6 @@ ThemeData darkThemeData = ThemeData(
   // Fondo
   scaffoldBackgroundColor: const Color(0xFF333333), // Fondo de los widgets
 
-  // AppBar
-  appBarTheme: const AppBarTheme(
-    color: Color(0xFF00897B), // Color de la barra de la aplicación
-    iconTheme: IconThemeData(
-        color: Color(
-            0xFFFFFFFF)), // Color de los iconos en la barra de la aplicación
-  ),
-
   // Botones
   buttonTheme: const ButtonThemeData(
     buttonColor: Color(0xFF00897B), // Color de fondo de los botones
@@ -39,7 +30,9 @@ ThemeData darkThemeData = ThemeData(
     primary: Color(0xFF00897B), // Color primario
     onPrimary: Color(0xFFFFFFFF), // Color de texto sobre el color primario
     secondary: Color(0xFF64FFDA), // Color secundario
-    onSecondary: Color(0xFF000000), // Color de texto sobre el color secundario
+    onSecondary: Color(0xFF000000),
+    tertiary: Color(0xFFFFFFFF),
+    onTertiary: Color(0x00000000), // Color de texto sobre el color secundario
     error: Color(0xFFB00020), // Color para errores
     onError: Color(0xFFFFFFFF), // Color de texto sobre el color de error
     background: Color(0xFF333333), // Color de fondo
