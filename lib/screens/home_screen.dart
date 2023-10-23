@@ -1,5 +1,6 @@
 import 'package:curved_labeled_navigation_bar/curved_navigation_bar.dart';
 import 'package:curved_labeled_navigation_bar/curved_navigation_bar_item.dart';
+import 'package:ekahanfirebase/screens/views/home_view.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -11,36 +12,38 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  int currentPageIndex = 0;
+  int currentPageIndex = 1;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Theme.of(context).colorScheme.primaryContainer,
       bottomNavigationBar: CurvedNavigationBar(
-        color:
-            const Color.fromARGB(255, 35, 120, 42), //Color de fondo de la barra
-        buttonBackgroundColor: Colors.white, //Color de la bolita del icono
-        backgroundColor: Colors.white, //Del fondo cuando esta seleccionado
+        color: Colors.white, //Color de fondo de la barra
+        buttonBackgroundColor: Theme.of(context)
+            .colorScheme
+            .primaryContainer, //Color de la bolita del icono
+        backgroundColor: Theme.of(context)
+            .colorScheme
+            .primaryContainer, //Del fondo cuando esta seleccionado
         items: const [
           CurvedNavigationBarItem(
+            //Barra de configuraciones
+            child: Icon(Icons.settings),
+            labelStyle: TextStyle(color: Colors.black),
+            label: 'Settings',
+          ),
+          CurvedNavigationBarItem(
+            //Barra de home
             child: Icon(Icons.home_outlined),
+            labelStyle: TextStyle(color: Colors.black),
             label: 'Home',
           ),
           CurvedNavigationBarItem(
-            child: Icon(Icons.search),
-            label: 'Search',
-          ),
-          CurvedNavigationBarItem(
-            child: Icon(Icons.chat_bubble_outline),
-            label: 'Chat',
-          ),
-          CurvedNavigationBarItem(
-            child: Icon(Icons.newspaper),
-            label: 'Feed',
-          ),
-          CurvedNavigationBarItem(
-            child: Icon(Icons.perm_identity),
-            label: 'Personal',
+            //Barra de Plan vigente
+            child: Icon(Icons.alt_route),
+            labelStyle: TextStyle(color: Colors.black),
+            label: 'Route',
           ),
         ],
         onTap: (index) {
@@ -50,10 +53,7 @@ class _HomeScreenState extends State<HomeScreen> {
         },
       ),
       body: <Widget>[
-        Container(
-          alignment: Alignment.center,
-          child: const Text('Page 1'),
-        ),
+        const HomeView(),
         Container(
           alignment: Alignment.center,
           child: const Text('Page 2'),
@@ -61,14 +61,6 @@ class _HomeScreenState extends State<HomeScreen> {
         Container(
           alignment: Alignment.center,
           child: const Text('Page 3'),
-        ),
-        Container(
-          alignment: Alignment.center,
-          child: const Text('Page 4'),
-        ),
-        Container(
-          alignment: Alignment.center,
-          child: const Text('Page 5'),
         ),
       ][currentPageIndex],
     );

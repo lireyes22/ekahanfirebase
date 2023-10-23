@@ -32,6 +32,7 @@ ThemeData lightThemeData = ThemeData(
         Brightness.light, // Puedes usar 'Brightness.dark' si lo prefieres
     primary: Color(0xFF00897B), // Color primario
     onPrimary: Color(0xFFFFFFFF), // Color de texto sobre el color primario
+    primaryContainer: Color(0xFF00A360),
     secondary: Color(0xFF64FFDA), // Color secundario
     onSecondary: Color(0xFF000000), // Color de texto sobre el color secundario
     tertiary: Color(0xFF000000),

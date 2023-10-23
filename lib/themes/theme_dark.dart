@@ -28,6 +28,7 @@ ThemeData darkThemeData = ThemeData(
   colorScheme: const ColorScheme(
     brightness: Brightness.dark, // Modo oscuro
     primary: Color(0xFF00897B), // Color primario
+    primaryContainer: Color(0xFF333333),
     onPrimary: Color(0xFFFFFFFF), // Color de texto sobre el color primario
     secondary: Color(0xFF64FFDA), // Color secundario
     onSecondary: Color(0xFF000000),
