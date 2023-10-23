@@ -7,13 +7,15 @@ class TextFieldPrimary extends StatelessWidget {
   final bool allNumbers;
   final IconButton? passwordController;
   final ValueChanged<String>? onChanged;
+  final Color? textColor;
+  final Color? bgColor;
   const TextFieldPrimary(
       {super.key,
       this.obscureTxt = false,
       this.labelTxt = "",
       this.allNumbers = false,
       this.passwordController,
-      this.onChanged});
+      this.onChanged, this.textColor, this.bgColor});
 
   @override
   Widget build(BuildContext context) {
@@ -42,8 +44,8 @@ class TextFieldPrimary extends StatelessWidget {
                 BorderSide(width: 2.0, color: Color.fromARGB(255, 20, 67, 20))),
         labelText: labelTxt,
         suffixIcon: passwordController,
-        labelStyle: const TextStyle(
-          color: Color.fromARGB(255, 28, 96, 27),
+        labelStyle: TextStyle(
+          color: textColor,
         ),
       ),
       onChanged: onChanged,

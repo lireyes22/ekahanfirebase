@@ -3,11 +3,13 @@ import 'package:flutter/material.dart';
 class LogoRow extends StatelessWidget {
   final double height;
   final double heightIcon;
-  const LogoRow({super.key, this.height = 94, this.heightIcon = 200});
+  final Color? txtColor;
+  const LogoRow(
+      {super.key, this.height = 94, this.heightIcon = 200, this.txtColor});
 
   @override
   Widget build(BuildContext context) {
-    return Row(children: <Widget>[      
+    return Row(children: <Widget>[
       Text(
         "Ek Ahan",
         textAlign: TextAlign.center,
@@ -16,7 +18,7 @@ class LogoRow extends StatelessWidget {
           fontSize: height, // Tamaño de fuente
           fontWeight: FontWeight
               .bold, // Peso de la fuente (puedes ajustarlo según tus preferencias)
-          color: const Color.fromARGB(255, 20, 67, 20), // Color del texto
+          color: txtColor, // Color del texto
           // Otros atributos de estilo, como letterSpacing, decoration, etc.
         ),
       ),

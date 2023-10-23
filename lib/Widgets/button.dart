@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 
 class ModelButtonPrimary extends StatelessWidget {
   final double widthFactor;
-  final Color backgroundColor;
-  final Color textColor;
+  final MaterialStateProperty<Color>? backgroundColor;
+  final Color? textColor;
   final String buttonText;
   final VoidCallback onPressed;
   final double fontSize;
@@ -13,8 +13,8 @@ class ModelButtonPrimary extends StatelessWidget {
   const ModelButtonPrimary({
     super.key,
     this.widthFactor = 0.7,
-    this.backgroundColor = const Color.fromARGB(255, 28, 96, 27),
-    this.textColor = const Color.fromARGB(255, 255, 255, 255),
+    this.backgroundColor,
+    this.textColor,
     this.buttonText = 'Text',
     required this.onPressed,
     this.fontSize = 20,
@@ -28,7 +28,7 @@ class ModelButtonPrimary extends StatelessWidget {
       widthFactor: widthFactor,
       child: FilledButton(
         style: ButtonStyle(
-          backgroundColor: MaterialStateProperty.all<Color>(backgroundColor),
+          backgroundColor: backgroundColor,
           padding: MaterialStateProperty.all<EdgeInsetsGeometry>(
             EdgeInsets.symmetric(vertical: highSize),
           ),

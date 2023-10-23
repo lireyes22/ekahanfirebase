@@ -85,7 +85,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   fontSize: 25,
                   buttonText:
                       'Sign in with google', // Cambia el texto del botón
-                  backgroundColor: const Color.fromARGB(255, 222, 222, 222),
+
                   textColor: Colors.black,
                   iconButton: Image.asset(
                     'assets/images/googleIcon.png',
