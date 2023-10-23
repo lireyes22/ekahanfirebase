@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 
 ThemeData lightThemeData = ThemeData(
   primaryColor: const Color(0xFF00897B), // Color primario
-  hintColor: const Color(0xFF64FFDA), // Color de acento
+  primaryColorDark: Colors.black,
+  hintColor: Colors.black, // Color de acento
 
   // Colores de texto
   textTheme: const TextTheme(
@@ -33,6 +34,7 @@ ThemeData lightThemeData = ThemeData(
     onPrimary: Color(0xFFFFFFFF), // Color de texto sobre el color primario
     secondary: Color(0xFF64FFDA), // Color secundario
     onSecondary: Color(0xFF000000), // Color de texto sobre el color secundario
+    tertiary: Color(0xFF000000),
     error: Color(0xFFB00020), // Color para errores
     onError: Color(0xFFFFFFFF), // Color de texto sobre el color de error
     background: Color(0xFFFFFFFF), // Color de fondo
