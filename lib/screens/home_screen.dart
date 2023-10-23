@@ -13,13 +13,13 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   int currentPageIndex = 1;
-  bool first = true;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Theme.of(context).colorScheme.primaryContainer,
       bottomNavigationBar: CurvedNavigationBar(
+        index: 1,
         color: Colors.white, //Color de fondo de la barra
         buttonBackgroundColor: Theme.of(context)
             .colorScheme
@@ -49,16 +49,15 @@ class _HomeScreenState extends State<HomeScreen> {
         ],
         onTap: (index) {
           setState(() {
-            if (first) {
-              first = false;
-              currentPageIndex = 1;
-            } else {
-              currentPageIndex = index;
-            }
+            currentPageIndex = index;
           });
         },
       ),
       body: <Widget>[
+        Container(
+          alignment: Alignment.center,
+          child: const Text('Page settings'),
+        ),
         ListView(
           shrinkWrap: true,
           physics: const BouncingScrollPhysics(),
@@ -68,11 +67,7 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
         Container(
           alignment: Alignment.center,
-          child: const Text('Page 2'),
-        ),
-        Container(
-          alignment: Alignment.center,
-          child: const Text('Page 3'),
+          child: const Text('Page Route'),
         ),
       ][currentPageIndex],
     );

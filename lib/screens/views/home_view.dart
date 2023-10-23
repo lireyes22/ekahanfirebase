@@ -1,4 +1,9 @@
+import 'package:ekahanfirebase/screens/views/models/model_card_two.dart';
 import 'package:flutter/material.dart';
+
+import 'models/model_card.dart';
+import 'models/search_field.dart';
+import 'models/title_separator.dart';
 
 class HomeView extends StatefulWidget {
   const HomeView({super.key});
@@ -13,78 +18,48 @@ class _HomeViewState extends State<HomeView> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: <Widget>[
-        GestureDetector(
-          child: Container(
-            margin: const EdgeInsets.symmetric(
-              horizontal: 20.0,
-              vertical: 10.0,
-            ),
-            decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.circular(15.0),
-              border: Border.all(width: 1.0, color: Colors.grey[200]!),
-            ),
-            child: Row(
-              children: <Widget>[
-                Padding(
-                  padding: const EdgeInsets.all(5.0),
-                  child: ClipRRect(
-                    borderRadius: BorderRadius.circular(15.0),
-                    child: Container(
-                      alignment: Alignment.center,
-                      constraints: const BoxConstraints(
-                        maxWidth: 150,
-                        maxHeight: 150,
-                      ),
-                      color: Colors.purple,
-                      child: const Text('Img del lugar',
-                          style: TextStyle(color: Colors.white)),
-                    ),
-                  ),
-                ),
-                Expanded(
-                  child: Container(
-                    margin: const EdgeInsets.all(12.0),
-                    child: const Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: <Widget>[
-                        Text(
-                          "Hola mundo 1111111111",
-                          overflow: TextOverflow.ellipsis,
-                          style: TextStyle(
-                            fontSize: 20.0,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                        SizedBox(height: 4.0),
-                        Text("Hola mundo 2"),
-                        SizedBox(height: 4.0),
-                        Text(
-                          "Hola mundo 3",
-                          overflow: TextOverflow.ellipsis,
-                          style: TextStyle(
-                            fontSize: 16.0,
-                            fontWeight: FontWeight.w600,
-                          ),
-                        ),
-                        SizedBox(height: 4.0),
-                        Text(
-                          '0.2 miles away',
-                          overflow: TextOverflow.ellipsis,
-                          style: TextStyle(
-                            fontSize: 16.0,
-                            fontWeight: FontWeight.w600,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                )
-              ],
-            ),
+        const SearchField(),
+        const TitleSeparator(title: 'Recommended places'),
+        SizedBox(
+          height: 130,
+          child: ListView(
+            physics: const BouncingScrollPhysics(),
+            padding: const EdgeInsets.only(left: 10.0),
+            scrollDirection: Axis.horizontal,
+            children: const <Widget>[
+              ModelCardRow(),
+              ModelCardRow(),
+              ModelCardRow(),
+              ModelCardRow(),
+              ModelCardRow(),
+              ModelCardRow(),
+              ModelCardRow(),
+              ModelCardRow(),
+              ModelCardRow(),
+            ],
           ),
-        )
+        ),
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 12),
+          child: Container(
+            height: 2, // Grosor de la línea
+            decoration: BoxDecoration(
+              color:
+                  Theme.of(context).colorScheme.tertiary, // Color de la línea
+              borderRadius: BorderRadius.circular(
+                  50), // Radio de borde para hacerlo redondeado
+            ),
+            margin: const EdgeInsets.symmetric(horizontal: 8),
+          ),
+        ),
+        const ModelCard(),
+        const ModelCard(),
+        const ModelCard(),
+        const ModelCard(),
+        const ModelCard(),
+        const ModelCard(),
+        const ModelCard(),
+        const ModelCard(),
       ],
     );
   }
