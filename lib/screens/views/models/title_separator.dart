@@ -16,6 +16,7 @@ class TitleSeparator extends StatelessWidget {
           color: Theme.of(context).colorScheme.tertiary,
           fontSize: 24.0,
           fontWeight: FontWeight.w600,
+          fontFamily: 'Poppins',
           letterSpacing: 1.2,
         ),
       ),

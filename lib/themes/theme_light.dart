@@ -4,14 +4,22 @@ ThemeData lightThemeData = ThemeData(
   primaryColor: const Color(0xFF00897B), // Color primario
   primaryColorDark: Colors.black,
   hintColor: Colors.black, // Color de acento
+  fontFamily: 'Poppins',
 
   // Colores de texto
   textTheme: const TextTheme(
+    bodyLarge: TextStyle(fontFamily: 'Poppins'),
     titleLarge: TextStyle(
-        color: Color.fromARGB(255, 96, 59, 27),
-        fontSize: 20.0), // Texto de encabezado
-    bodyMedium:
-        TextStyle(color: Color(0xFF00897B), fontSize: 16.0), // Texto de cuerpo
+      color: Color.fromARGB(255, 96, 59, 27),
+      fontSize: 20.0,
+      fontFamily: 'Poppins',
+    ), // Texto de encabezado
+
+    bodyMedium: TextStyle(
+      color: Color(0xFF00897B),
+      fontSize: 16.0,
+      fontFamily: 'Poppins',
+    ), // Texto de cuerpo
   ),
 
   // Fondo

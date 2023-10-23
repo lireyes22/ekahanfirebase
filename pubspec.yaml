@@ -86,9 +86,12 @@ flutter:
     - family: MayaUno
       fonts:
         - asset: assets/fonts/MayaUno.ttf
+    - family: Poppins
+      fonts:
+        - asset: assets/fonts/Poppins.ttf
   # fonts:
   #   - family: Schyler
-  #     fonts:
+  #     fonts:Poppins.ttf
   #       - asset: fonts/Schyler-Regular.ttf
   #       - asset: fonts/Schyler-Italic.ttf
   #         style: italic

@@ -1,3 +1,4 @@
+import 'package:ekahanfirebase/screens/views/models/divierli.dart';
 import 'package:ekahanfirebase/screens/views/models/model_card_two.dart';
 import 'package:flutter/material.dart';
 
@@ -39,18 +40,9 @@ class _HomeViewState extends State<HomeView> {
             ],
           ),
         ),
-        Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 12),
-          child: Container(
-            height: 2, // Grosor de la línea
-            decoration: BoxDecoration(
-              color:
-                  Theme.of(context).colorScheme.tertiary, // Color de la línea
-              borderRadius: BorderRadius.circular(
-                  50), // Radio de borde para hacerlo redondeado
-            ),
-            margin: const EdgeInsets.symmetric(horizontal: 8),
-          ),
+        const DividerLi(
+          color: Color.fromARGB(55, 0, 0, 0),
+          tm: 1,
         ),
         const ModelCard(),
         const ModelCard(),
