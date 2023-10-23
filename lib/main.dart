@@ -1,4 +1,5 @@
-import 'package:ekahanfirebase/themes/theme_one.dart';
+import 'package:ekahanfirebase/themes/theme_dark.dart';
+import 'package:ekahanfirebase/themes/theme_light.dart';
 import 'package:flutter/material.dart';
 //Firebase:
 import 'package:firebase_core/firebase_core.dart';
@@ -17,7 +18,7 @@ void main() async {
   );
   runApp(MaterialApp(
     debugShowCheckedModeBanner: false,
-    theme: themeDataUno,
+    theme: darkThemeData,
     home: const WelcomeScreen(),
     initialRoute: WelcomeScreen.routeName,
     routes: <String, WidgetBuilder>{

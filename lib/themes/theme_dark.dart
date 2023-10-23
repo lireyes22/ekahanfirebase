@@ -1,19 +1,20 @@
+
 import 'package:flutter/material.dart';
 
-ThemeData themeDataUno = ThemeData(
+ThemeData darkThemeData = ThemeData(
   primaryColor: const Color(0xFF00897B), // Color primario
   hintColor: const Color(0xFF64FFDA), // Color de acento
 
   // Colores de texto
   textTheme: const TextTheme(
     titleLarge: TextStyle(
-        color: Color(0xFF333333), fontSize: 20.0), // Texto de encabezado
+        color: Color(0xFFFFFFFF), fontSize: 20.0), // Texto de encabezado
     bodyMedium:
-        TextStyle(color: Color(0xFF333333), fontSize: 16.0), // Texto de cuerpo
+        TextStyle(color: Color(0xFFFFFFFF), fontSize: 16.0), // Texto de cuerpo
   ),
 
   // Fondo
-  scaffoldBackgroundColor: const Color(0xFFF0FFF4), // Fondo de los widgets
+  scaffoldBackgroundColor: const Color(0xFF333333), // Fondo de los widgets
 
   // AppBar
   appBarTheme: const AppBarTheme(
@@ -31,20 +32,19 @@ ThemeData themeDataUno = ThemeData(
 
   // Otros estilos
   cardTheme: const CardTheme(
-    color: Color(0xFFFFFFFF), // Fondo de las tarjetas
+    color: Color(0xFF333333), // Fondo de las tarjetas
   ),
   colorScheme: const ColorScheme(
-    brightness:
-        Brightness.light, // Puedes usar 'Brightness.dark' si lo prefieres
+    brightness: Brightness.dark, // Modo oscuro
     primary: Color(0xFF00897B), // Color primario
     onPrimary: Color(0xFFFFFFFF), // Color de texto sobre el color primario
     secondary: Color(0xFF64FFDA), // Color secundario
     onSecondary: Color(0xFF000000), // Color de texto sobre el color secundario
     error: Color(0xFFB00020), // Color para errores
     onError: Color(0xFFFFFFFF), // Color de texto sobre el color de error
-    background: Color(0xFFFFFFFF), // Color de fondo
-    onBackground: Color(0xFF000000), // Color de texto sobre el fondo
-    surface: Color(0xFFFFFFFF), // Color de superficie
-    onSurface: Color(0xFF000000), // Color de texto sobre la superficie
+    background: Color(0xFF333333), // Color de fondo
+    onBackground: Color(0xFFFFFFFF), // Color de texto sobre el fondo
+    surface: Color(0xFF333333), // Color de superficie
+    onSurface: Color(0xFFFFFFFF), // Color de texto sobre la superficie
   ),
 );
