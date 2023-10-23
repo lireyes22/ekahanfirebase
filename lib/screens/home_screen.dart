@@ -13,6 +13,7 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   int currentPageIndex = 1;
+  bool first = true;
 
   @override
   Widget build(BuildContext context) {
@@ -48,12 +49,23 @@ class _HomeScreenState extends State<HomeScreen> {
         ],
         onTap: (index) {
           setState(() {
-            currentPageIndex = index;
+            if (first) {
+              first = false;
+              currentPageIndex = 1;
+            } else {
+              currentPageIndex = index;
+            }
           });
         },
       ),
       body: <Widget>[
-        const HomeView(),
+        ListView(
+          shrinkWrap: true,
+          physics: const BouncingScrollPhysics(),
+          children: const <Widget>[
+            HomeView(),
+          ],
+        ),
         Container(
           alignment: Alignment.center,
           child: const Text('Page 2'),
