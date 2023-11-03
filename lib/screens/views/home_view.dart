@@ -1,5 +1,4 @@
 import 'package:ekahanfirebase/screens/views/models/divierli.dart';
-import 'package:ekahanfirebase/screens/views/models/model_card_two.dart';
 import 'package:flutter/material.dart';
 
 import 'models/model_card.dart';
@@ -22,21 +21,14 @@ class _HomeViewState extends State<HomeView> {
         const SearchField(),
         const TitleSeparator(title: 'Recommended places'),
         SizedBox(
-          height: 130,
+          height: 170,
           child: ListView(
             physics: const BouncingScrollPhysics(),
             padding: const EdgeInsets.only(left: 10.0),
             scrollDirection: Axis.horizontal,
             children: const <Widget>[
-              ModelCardRow(),
-              ModelCardRow(),
-              ModelCardRow(),
-              ModelCardRow(),
-              ModelCardRow(),
-              ModelCardRow(),
-              ModelCardRow(),
-              ModelCardRow(),
-              ModelCardRow(),
+              ModelCard(widthM: 325),
+              ModelCard(widthM: 325),
             ],
           ),
         ),
@@ -44,7 +36,6 @@ class _HomeViewState extends State<HomeView> {
           color: Color.fromARGB(55, 0, 0, 0),
           tm: 1,
         ),
-        const ModelCard(),
         const ModelCard(),
         const ModelCard(),
         const ModelCard(),
