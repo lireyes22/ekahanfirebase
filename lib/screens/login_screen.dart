@@ -70,7 +70,9 @@ class _LoginScreenState extends State<LoginScreen> {
                       // Iniciar sesión exitosa
                       ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
                           content: Text('Inicio de sesion exitoso!')));
-                      Navigator.pushNamed(context, '/home');
+                      //Manda el contexto, la ruta a la que va ir, y se resetea el navigator para que no regrese
+                      Navigator.restorablePushNamedAndRemoveUntil(
+                          context, '/home', (Route<dynamic> route) => false);
                     } else {
                       ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
                           content: Text('Credenciales invalidas!')));
