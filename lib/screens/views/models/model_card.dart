@@ -3,7 +3,8 @@ import 'package:flutter/material.dart';
 
 class ModelCard extends StatefulWidget {
   final double? widthM;
-  const ModelCard({super.key, this.widthM});
+  final List<TextWithConfigs> textWidgets;
+  const ModelCard({super.key, this.widthM, required this.textWidgets});
 
   @override
   State<ModelCard> createState() => _ModelCardState();
@@ -42,20 +43,13 @@ class _ModelCardState extends State<ModelCard> {
                 ),
               ),
             ),
-            const Expanded(
+            Expanded(
               child: Padding(
-                padding: EdgeInsets.all(12.0),
+                padding: const EdgeInsets.all(12.0),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisAlignment: MainAxisAlignment.center,
-                  children: <Widget>[
-                    TextWithConfigs(
-                      text: 'hola1',
-                    ),
-                    TextWithConfigs(
-                      text: 'hola33',
-                    ),
-                  ],
+                  children: widget.textWidgets,
                 ),
               ),
             )
