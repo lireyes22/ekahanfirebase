@@ -55,6 +55,9 @@ class _ListLugaresState extends State<ListLugares> {
                     color: const Color.fromARGB(200, 0, 0, 0),
                   ),
                 ],
+                onTap: () {
+                  Navigator.pushNamed(context, '/buildpack');
+                },
               );
             }).toList(),
           );

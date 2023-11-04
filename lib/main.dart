@@ -1,3 +1,4 @@
+import 'package:ekahanfirebase/screens/buildpack_screen.dart';
 import 'package:flutter/material.dart';
 //Firebase:
 import 'package:firebase_core/firebase_core.dart';
@@ -26,7 +27,8 @@ void main() async {
       RegisterScreen.routeName: (BuildContext context) =>
           const RegisterScreen(),
       HomeScreen.routeName: (BuildContext context) => const HomeScreen(),
-      WelcomeScreen.routeName: (BuildContext context) => const WelcomeScreen()
+      WelcomeScreen.routeName: (BuildContext context) => const WelcomeScreen(),
+      BuildPackScreen.routeName: (BuildContext context) => const BuildPackScreen()
     },
   ));
 }
