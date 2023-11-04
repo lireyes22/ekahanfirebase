@@ -1,10 +1,16 @@
 import 'package:ekahanfirebase/screens/views/models/text_with_configs.dart';
+import 'package:ekahanfirebase/screens/views/objects/image_lugar.dart';
 import 'package:flutter/material.dart';
 
 class ModelCard extends StatefulWidget {
   final double? widthM;
+  final String urlImage;
   final List<TextWithConfigs> textWidgets;
-  const ModelCard({super.key, this.widthM, required this.textWidgets});
+  const ModelCard(
+      {super.key,
+      this.widthM,
+      required this.textWidgets,
+      this.urlImage = 'https://i.ibb.co/4gZ6JMz/nodata.jpg'});
 
   @override
   State<ModelCard> createState() => _ModelCardState();
@@ -38,8 +44,9 @@ class _ModelCardState extends State<ModelCard> {
                     maxHeight: 150,
                   ),
                   color: Theme.of(context).colorScheme.primary,
-                  child: const Text('Img del lugar',
-                      style: TextStyle(color: Colors.white)),
+                  child: ImageCard(
+                    urlImage: widget.urlImage,
+                  ),
                 ),
               ),
             ),

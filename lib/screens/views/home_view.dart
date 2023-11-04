@@ -1,5 +1,6 @@
 import 'package:ekahanfirebase/screens/views/models/divierli.dart';
 import 'package:ekahanfirebase/screens/views/models/text_with_configs.dart';
+import 'package:ekahanfirebase/screens/views/objects/list_lugares.dart';
 import 'package:flutter/material.dart';
 
 import 'models/model_card.dart';
@@ -42,13 +43,8 @@ class _HomeViewState extends State<HomeView> {
           color: Color.fromARGB(55, 0, 0, 0),
           tm: 1,
         ),
-        const ModelCard(
-          textWidgets: [
-            TextWithConfigs(text: 'Texto 1'),
-            TextWithConfigs(text: 'Texto 2'),
-            TextWithConfigs(text: 'Texto 3'),
-          ],
-        ),
+        ////////////////////////Aqui debe ir la lista//////////////////////////////////////
+        const ListLugares(),
       ],
     );
   }

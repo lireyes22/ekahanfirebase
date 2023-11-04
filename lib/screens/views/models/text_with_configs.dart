@@ -5,8 +5,10 @@ class TextWithConfigs extends StatelessWidget {
   final double mb;
   final double fontSize;
   final String text;
+  final int nlines;
   final FontWeight tmText;
   final TextOverflow overflow;
+  final Color color;
   const TextWithConfigs(
       {super.key,
       this.mt = 0.0,
@@ -14,6 +16,8 @@ class TextWithConfigs extends StatelessWidget {
       this.text = '',
       this.fontSize = 20.0,
       this.tmText = FontWeight.normal,
+      this.color = Colors.black,
+      this.nlines = 1,
       this.overflow = TextOverflow.ellipsis});
 
   @override
@@ -23,8 +27,10 @@ class TextWithConfigs extends StatelessWidget {
         SizedBox(height: mt),
         Text(
           text,
+          maxLines: nlines,
           overflow: overflow,
           style: TextStyle(
+            color: color,
             fontSize: fontSize,
             fontWeight: tmText,
           ),

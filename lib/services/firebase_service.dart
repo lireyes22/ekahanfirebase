@@ -15,7 +15,10 @@ Future<List> getUsers() async {
 Future<bool> getUserEP(String email, String password) async {
   try {
     final collectionReferenceUsers = db.collection('usuarios');
-    final query = await collectionReferenceUsers.where('email', isEqualTo: email).where('password', isEqualTo: password).get();
+    final query = await collectionReferenceUsers
+        .where('email', isEqualTo: email)
+        .where('password', isEqualTo: password)
+        .get();
     return query.docs.isNotEmpty;
   } catch (e) {
     return false;
@@ -38,4 +41,14 @@ Future<bool> addUser(String email, String password, String name,
   } catch (e) {
     return false;
   }
+}
+
+Future<List> getLugares() async {
+  List lugares = [];
+  CollectionReference collectionReferenceUsers = db.collection('lugares');
+  QuerySnapshot queryUsers = await collectionReferenceUsers.get();
+  for (var document in queryUsers.docs) {
+    lugares.add(document.data());
+  }
+  return lugares;
 }
