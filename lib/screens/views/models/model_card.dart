@@ -5,12 +5,14 @@ import 'package:flutter/material.dart';
 class ModelCard extends StatefulWidget {
   final double? widthM;
   final String urlImage;
+  final VoidCallback? onTap;
   final List<TextWithConfigs> textWidgets;
   const ModelCard(
       {super.key,
       this.widthM,
       required this.textWidgets,
-      this.urlImage = 'https://i.ibb.co/4gZ6JMz/nodata.jpg'});
+      this.urlImage = 'https://i.ibb.co/4gZ6JMz/nodata.jpg',
+      this.onTap});
 
   @override
   State<ModelCard> createState() => _ModelCardState();
@@ -20,6 +22,7 @@ class _ModelCardState extends State<ModelCard> {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
+      onTap: widget.onTap,
       child: Container(
         margin: const EdgeInsets.symmetric(
           horizontal: 20.0,
