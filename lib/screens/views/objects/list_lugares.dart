@@ -57,10 +57,11 @@ class _ListLugaresState extends State<ListLugares> {
                   ),
                 ],
                 onTap: () {
+                  String lugarID = lugar['id']; // Acceder al ID del documento
                   Navigator.pushNamed(
                     context,
                     '/buildpack',
-                    arguments: lugar.id, // lugar.id es el ID del documento
+                    arguments: lugarID,
                   );
                 },
               );

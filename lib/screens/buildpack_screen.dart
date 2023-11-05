@@ -15,9 +15,6 @@ class _BuildPackScreenState extends State<BuildPackScreen> {
         ModalRoute.of(context)!.settings.arguments as String;
 
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Detalles del Documento'),
-      ),
       body: Center(
         child: Text('ID del Documento: $documentID'),
       ),

@@ -43,12 +43,24 @@ Future<bool> addUser(String email, String password, String name,
   }
 }
 
-Future<List> getLugares() async {
+/*Future<List> getLugares() async {
   List lugares = [];
   CollectionReference collectionReferenceUsers = db.collection('lugares');
   QuerySnapshot queryUsers = await collectionReferenceUsers.get();
   for (var document in queryUsers.docs) {
     lugares.add(document.data());
+  }
+  return lugares;
+}*/
+
+Future<List<Map<String, dynamic>>> getLugares() async {
+  List<Map<String, dynamic>> lugares = [];
+  CollectionReference collectionReferenceLugares = db.collection('lugares');
+  QuerySnapshot queryLugares = await collectionReferenceLugares.get();
+  for (var document in queryLugares.docs) {
+    Map<String, dynamic> lugarData = document.data() as Map<String, dynamic>;
+    lugarData['id'] = document.id; // Agrega el ID del documento a los datos
+    lugares.add(lugarData);
   }
   return lugares;
 }
