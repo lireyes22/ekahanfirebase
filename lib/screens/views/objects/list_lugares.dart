@@ -32,7 +32,7 @@ class _ListLugaresState extends State<ListLugares> {
                 urlImage: lugar['imgRepresentativa'] != null &&
                         lugar['imgRepresentativa'].isNotEmpty
                     ? lugar['imgRepresentativa'].toString()
-                    : 'https://i.ibb.co/4gZ6JMz/nodata.jpg',
+                    : 'https://raw.githubusercontent.com/lireyes22/EkAhanImagesBD/main/nodata.jpg',
                 textWidgets: [
                   TextWithConfigs(
                     text: lugar['lugar'].toString(),

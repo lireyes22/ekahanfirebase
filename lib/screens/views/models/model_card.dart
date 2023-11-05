@@ -11,7 +11,8 @@ class ModelCard extends StatefulWidget {
       {super.key,
       this.widthM,
       required this.textWidgets,
-      this.urlImage = 'https://i.ibb.co/4gZ6JMz/nodata.jpg',
+      this.urlImage =
+          'https://raw.githubusercontent.com/lireyes22/EkAhanImagesBD/main/nodata.jpg',
       this.onTap});
 
   @override
