@@ -50,8 +50,9 @@ class _ListLugaresState extends State<ListLugares> {
                     nlines: 3,
                   ),
                   TextWithConfigs(
-                    text: 'Destacado: ${lugar['destacado'].toString()}',
+                    text: lugar['destacado'].toString(),
                     fontSize: 16,
+                    tmText: FontWeight.bold,
                     color: const Color.fromARGB(200, 0, 0, 0),
                   ),
                 ],
