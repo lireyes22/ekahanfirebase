@@ -42,6 +42,8 @@ dependencies:
   #Dependencias de firebase
   firebase_core: ^2.19.0
   cloud_firestore: ^4.11.0
+  #Dependencias de Objetos3D
+  babylonjs_viewer: ^1.2.1
   
 
 dev_dependencies:
