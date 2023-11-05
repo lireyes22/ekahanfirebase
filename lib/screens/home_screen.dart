@@ -43,9 +43,9 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
             CurvedNavigationBarItem(
               //Barra de Plan vigente
-              child: Icon(Icons.alt_route),
+              child: Icon(Icons.list_alt),
               labelStyle: TextStyle(color: Colors.black),
-              label: 'Route',
+              label: 'History',
             ),
           ],
           onTap: (index) {

@@ -6,14 +6,18 @@ class ModelCard extends StatefulWidget {
   final double? widthM;
   final String urlImage;
   final VoidCallback? onTap;
+  final VoidCallback? onPressed;
+  final bool btnPlus;
   final List<TextWithConfigs> textWidgets;
   const ModelCard(
       {super.key,
       this.widthM,
+      this.btnPlus = false,
       required this.textWidgets,
       this.urlImage =
           'https://raw.githubusercontent.com/lireyes22/EkAhanImagesBD/main/nodata.jpg',
-      this.onTap});
+      this.onTap,
+      this.onPressed});
 
   @override
   State<ModelCard> createState() => _ModelCardState();
@@ -63,10 +67,39 @@ class _ModelCardState extends State<ModelCard> {
                   children: widget.textWidgets,
                 ),
               ),
-            )
+            ),
+            //Si pone true, se agrega un boton visual (+)
+            if (widget.btnPlus)
+              Container(
+                margin: const EdgeInsets.only(right: 10.0),
+                width: 45.0,
+                decoration: BoxDecoration(
+                  color: Theme.of(context).primaryColor,
+                  shape: BoxShape.circle,
+                ),
+                child: IconButton(
+                  onPressed: widget.onPressed,
+                  icon: const Icon(Icons.add, color: Colors.white),
+                ),
+              ),
           ],
         ),
       ),
     );
   }
 }
+/*
+          const SizedBox(height: 4.0),
+          Container(
+            margin: const EdgeInsets.only(right: 10.0),
+            width: 45.0,
+            decoration: BoxDecoration(
+              color: Theme.of(context).primaryColor,
+              shape: BoxShape.circle,
+            ),
+            child: IconButton(
+              onPressed: () {},
+              icon: const Icon(Icons.add, color: Colors.white),
+            ),
+          ),
+*/
