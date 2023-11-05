@@ -44,6 +44,8 @@ dependencies:
   cloud_firestore: ^4.11.0
   #Dependencias de Objetos3D
   babylonjs_viewer: ^1.2.1
+  #provider para manejo global
+  provider: ^6.0.5
   
 
 dev_dependencies:

@@ -1,6 +1,8 @@
+import 'package:ekahanfirebase/providers/provider_prueba.dart';
 import 'package:ekahanfirebase/screens/views/models/model_card.dart';
 import 'package:ekahanfirebase/screens/views/models/text_with_configs.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class ListRecomendados extends StatefulWidget {
   const ListRecomendados({super.key});
@@ -18,16 +20,26 @@ class _ListRecomendadosState extends State<ListRecomendados> {
         physics: const BouncingScrollPhysics(),
         padding: const EdgeInsets.only(left: 10.0),
         scrollDirection: Axis.horizontal,
-        children: const <Widget>[
+        children: <Widget>[
           ModelCard(
             widthM: 325,
             btnPlus: true,
             textWidgets: [
               TextWithConfigs(
-                text: 'Texto 1',
+                text: context.watch<ProviderPrueba>().pr,
                 fontSize: 11,
               ),
             ],
+            onPressed: () {
+              setState(() {
+                context.read<ProviderPrueba>().addLetter('b');
+              });
+            },
+            onTap: () {
+              setState(() {
+                context.read<ProviderPrueba>().addLetter('c');
+              });
+            },
           ),
         ],
       ),

@@ -1,4 +1,5 @@
 import 'package:ekahanfirebase/screens/views/objects/list_lugares.dart';
+import 'package:ekahanfirebase/screens/views/objects/list_recomendados.dart';
 import 'package:flutter/material.dart';
 import 'models/search_field.dart';
 
@@ -17,7 +18,7 @@ class _HomeViewState extends State<HomeView> {
       children: <Widget>[
         SearchField(),
         //TitleSeparator(title: 'Recommended places'),
-        //ListRecomendados(),
+        ListRecomendados(),
         //DividerLi(color: Color.fromARGB(85, 0, 0, 0), tm: 5),
         ListLugares(),
       ],

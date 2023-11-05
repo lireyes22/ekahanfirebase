@@ -1,7 +1,9 @@
+import 'package:ekahanfirebase/providers/provider_prueba.dart';
 import 'package:ekahanfirebase/screens/buildpack_screen.dart';
 import 'package:flutter/material.dart';
 //Firebase:
 import 'package:firebase_core/firebase_core.dart';
+import 'package:provider/provider.dart';
 import 'firebase_options.dart';
 //Pantallas:
 import 'package:ekahanfirebase/screens/home_screen.dart';
@@ -17,7 +19,12 @@ void main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
-  runApp(MaterialApp(
+  runApp(
+      ChangeNotifierProvider(create: (_) => ProviderPrueba(), child: _home()));
+}
+
+MaterialApp _home() {
+  return MaterialApp(
     debugShowCheckedModeBanner: false,
     theme: lightThemeData,
     home: const WelcomeScreen(),
@@ -28,7 +35,8 @@ void main() async {
           const RegisterScreen(),
       HomeScreen.routeName: (BuildContext context) => const HomeScreen(),
       WelcomeScreen.routeName: (BuildContext context) => const WelcomeScreen(),
-      BuildPackScreen.routeName: (BuildContext context) => const BuildPackScreen()
+      BuildPackScreen.routeName: (BuildContext context) =>
+          const BuildPackScreen()
     },
-  ));
+  );
 }
