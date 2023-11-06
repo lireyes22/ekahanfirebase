@@ -1,5 +1,5 @@
-import 'package:ekahanfirebase/screens/views_home/models/model_card.dart';
-import 'package:ekahanfirebase/screens/views_home/models/text_with_configs.dart';
+import 'package:ekahanfirebase/Widgets/model_card.dart';
+import 'package:ekahanfirebase/Widgets/text_with_configs.dart';
 import 'package:ekahanfirebase/services/firebase_service.dart';
 import 'package:flutter/material.dart';
 

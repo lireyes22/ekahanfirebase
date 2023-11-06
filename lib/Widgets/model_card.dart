@@ -1,4 +1,4 @@
-import 'package:ekahanfirebase/screens/views_home/models/text_with_configs.dart';
+import 'package:ekahanfirebase/Widgets/text_with_configs.dart';
 import 'package:ekahanfirebase/screens/views_home/objects/image_lugar.dart';
 import 'package:flutter/material.dart';
 

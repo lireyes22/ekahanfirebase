@@ -1,7 +1,7 @@
 import 'package:ekahanfirebase/screens/views_home/objects/list_lugares.dart';
 import 'package:ekahanfirebase/screens/views_home/objects/list_recomendados.dart';
 import 'package:flutter/material.dart';
-import 'models/search_field.dart';
+import '../../Widgets/search_field.dart';
 
 class HomeView extends StatefulWidget {
   const HomeView({super.key});
