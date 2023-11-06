@@ -46,6 +46,8 @@ dependencies:
   babylonjs_viewer: ^1.2.1
   #provider para manejo global
   provider: ^6.0.5
+  curved_navigation_rail: ^2.0.1
+  animated_notch_bottom_bar: ^1.0.0
   
 
 dev_dependencies:

@@ -1,4 +1,4 @@
-import 'package:ekahanfirebase/screens/views/models/divierli.dart';
+import 'package:ekahanfirebase/screens/views_home/models/divierli.dart';
 import 'package:flutter/material.dart';
 
 class SettingsView extends StatefulWidget {

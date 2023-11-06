@@ -1,6 +1,6 @@
 import 'package:ekahanfirebase/providers/provider_prueba.dart';
-import 'package:ekahanfirebase/screens/views/models/model_card.dart';
-import 'package:ekahanfirebase/screens/views/models/text_with_configs.dart';
+import 'package:ekahanfirebase/screens/views_home/models/model_card.dart';
+import 'package:ekahanfirebase/screens/views_home/models/text_with_configs.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 

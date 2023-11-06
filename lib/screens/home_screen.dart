@@ -1,7 +1,7 @@
 import 'package:curved_labeled_navigation_bar/curved_navigation_bar.dart';
 import 'package:curved_labeled_navigation_bar/curved_navigation_bar_item.dart';
-import 'package:ekahanfirebase/screens/views/home_view.dart';
-import 'package:ekahanfirebase/screens/views/settings_view.dart';
+import 'package:ekahanfirebase/screens/views_home/home_view.dart';
+import 'package:ekahanfirebase/screens/views_home/settings_view.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatefulWidget {
