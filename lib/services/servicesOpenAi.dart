@@ -26,11 +26,11 @@ Future<String> getCoordsPlace(String place) async {
         Messages(
             role: Role.system,
             content:
-                "Tienes que proporcionar unicamente coordenadas de lugares turisticos que hayan en los lugares que te indiquen"),
+                "Dependiendo del nombre de la ciudad que te ingresen responderas con un lugar emblematico de esa ciudad"),
         Messages(
             role: Role.system,
             content:
-                "El formato debe ser exclusivamente asi, sin agregar mas texto: 37.769263, -122.450727 "),
+                "Por ejemplo, si teingresan: Chiapas, respondes: Piramide, Chichén Itzá "),
         Messages(role: Role.user, content: place)
       ],
       maxToken: 200);

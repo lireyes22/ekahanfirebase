@@ -1,5 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:ekahanfirebase/screens/views_info_lugar/air_quality.dart';
 import 'package:ekahanfirebase/services/servicesOpenAi.dart';
+import 'package:geocoding/geocoding.dart';
 
 FirebaseFirestore db = FirebaseFirestore.instance;
 
@@ -55,19 +57,27 @@ Future<List> getInfo(lugarID) async {
   DocumentSnapshot lugarDoc = await getLugar(lugarID);
   String lugar = lugarDoc.get('lugar');
   String message = await getMessagePlace(lugar);
-  String coords = await getCoordsPlace(lugar);
+  String emblematico = await getCoordsPlace(lugar);
 
-  coords = coords.substring(0, coords.lastIndexOf("W"));
-
-  String px = coords.substring(0, coords.indexOf("°"));
-  String py = coords.substring(coords.indexOf(",") + 1);
-  py = py.substring(0, py.indexOf("°"));
-
+  //Push datos
   infos.add(lugar);
-  infos.add(message);
-  infos.add(coords);
-  infos.add(px.trim());
-  infos.add(py.trim());
+  infos.add(message); //1
+  infos.add(emblematico); //2
+
+  //Se obtienen las cordenadas
+  List<Location> locations = await locationFromAddress(emblematico);
+  if (locations.isNotEmpty) {
+    Location location = locations.first;
+    double latitude = location.latitude;
+    double longitude = location.longitude;
+    //agregamos latitude y longitude
+    infos.add(latitude); //3
+    infos.add(longitude); //4
+
+    String airCategory = await fetchAirQualityData(latitude, longitude);
+    infos.add(airCategory); //
+  }
+
   return infos;
 }
 

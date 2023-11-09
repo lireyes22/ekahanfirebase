@@ -55,6 +55,8 @@ dependencies:
   #google maps
   google_maps_flutter: ^2.2.8
   flutter_google_street_view: ^3.1.4
+  geocoding: ^2.1.1
+  air_quality: ^4.0.0
   
 
 dev_dependencies:

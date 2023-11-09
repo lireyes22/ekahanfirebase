@@ -1,8 +1,10 @@
+import 'package:ekahanfirebase/Widgets/model_card.dart';
 import 'package:ekahanfirebase/Widgets/text_with_configs.dart';
+import 'package:ekahanfirebase/screens/views_info_lugar/img_air_quality.dart';
+import 'package:ekahanfirebase/screens/views_info_lugar/mapa.dart';
 import 'package:ekahanfirebase/services/firebase_service.dart';
 import 'package:ekahanfirebase/services/ttservice.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_google_street_view/flutter_google_street_view.dart';
 
 class InfoLugarView extends StatefulWidget {
   const InfoLugarView({super.key});
@@ -20,17 +22,31 @@ class _InfoLugarViewState extends State<InfoLugarView> {
       future: getInfo(lugarID),
       builder: (context, snapshot) {
         if (snapshot.connectionState == ConnectionState.waiting) {
-          return const CircularProgressIndicator(); // Puedes mostrar un indicador de carga mientras se obtienen los datos
+          return Column(children: <Widget>[
+            const CircularProgressIndicator(),
+            FilledButton(
+              onPressed: () async {
+                setState(() {});
+              },
+              child: const Icon(Icons.replay),
+            ),
+          ]); // Puedes mostrar un indicador de carga mientras se obtienen los datos
         } else if (snapshot.hasError) {
-          return Text('Error: ${snapshot.error}');
+          return FilledButton(
+            onPressed: () async {
+              setState(() {});
+            },
+            child: const Icon(Icons.replay),
+          );
         } else if (!snapshot.hasData || snapshot.data!.isEmpty) {
           return const Text(
               'No se encontro el lugar.'); // Manejo cuando no hay datos
         } else {
           String msj = snapshot.data![1];
-          String coords = snapshot.data![2];
-          String px = snapshot.data![3];
-          String py = snapshot.data![4];
+          String emblematico = snapshot.data![2];
+          double latitude = snapshot.data![3];
+          double longitude = snapshot.data![4];
+          String airCategory = snapshot.data![5];
           return Column(
             children: <Widget>[
               TextWithConfigs(
@@ -79,6 +95,13 @@ class _InfoLugarViewState extends State<InfoLugarView> {
                         return const Icon(Icons.pause);
                       },
                     ),
+                  ),
+                  const SizedBox(width: 10),
+                  FilledButton(
+                    onPressed: () async {
+                      setState(() {});
+                    },
+                    child: const Icon(Icons.replay),
                   )
                 ],
               ),
@@ -86,20 +109,29 @@ class _InfoLugarViewState extends State<InfoLugarView> {
               SizedBox(
                 width: 500,
                 height: 500,
-                child: FlutterGoogleStreetView(
-                  initPos: const LatLng(20.6829859, -88.5686491),
-                  initSource: StreetViewSource.outdoor,
-                  initBearing: 0.0, // Orientación inicial
-                  initTilt: 0.0, // Inclinación inicial
-                  initZoom: 1.0, // Zoom inicial
-                  onStreetViewCreated: (controller) {
-                    // Aquí puedes interactuar con el controlador de Street View
-                  },
-                ),
+                child: MapaWidget(latitude: latitude, longitude: longitude),
               ),
-              SizedBox(height: 20, child: Text(coords)),
-              SizedBox(height: 20, child: Text(px)),
-              SizedBox(height: 20, child: Text(py)),
+              ModelCard(
+                urlImage: urlmage(airCategory),
+                textWidgets: <TextWithConfigs>[
+                  TextWithConfigs(
+                      fontSize: 15,
+                      tmText: FontWeight.bold,
+                      text:
+                          '${latitude.toString()} °N, ${longitude.toString()} °W'),
+                  TextWithConfigs(
+                    text: emblematico,
+                    fontSize: 13,
+                    nlines: 5,
+                  ),
+                  TextWithConfigs(
+                    text: airCategory,
+                    fontSize: 13,
+                    nlines: 5,
+                    tmText: FontWeight.bold,
+                  ),
+                ],
+              ),
             ],
           );
         }

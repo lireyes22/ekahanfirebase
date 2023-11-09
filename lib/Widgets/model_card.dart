@@ -10,6 +10,7 @@ class ModelCard extends StatefulWidget {
   final bool btnPlus;
   final Icon icono;
   final List<TextWithConfigs> textWidgets;
+  final Color? colorBgImg;
   const ModelCard(
       {super.key,
       this.widthM,
@@ -19,6 +20,7 @@ class ModelCard extends StatefulWidget {
           'https://raw.githubusercontent.com/lireyes22/EkAhanImagesBD/main/nodata.jpg',
       this.onTap,
       this.onPressed,
+      this.colorBgImg,
       this.icono = const Icon(Icons.add, color: Colors.white)});
 
   @override
@@ -53,7 +55,7 @@ class _ModelCardState extends State<ModelCard> {
                     maxWidth: 150,
                     maxHeight: 150,
                   ),
-                  color: Theme.of(context).colorScheme.primary,
+                  color: widget.colorBgImg,
                   child: ImageCard(
                     urlImage: widget.urlImage,
                   ),
