@@ -51,6 +51,10 @@ dependencies:
   http: ^1.1.0
   chat_gpt_sdk: ^2.2.5
   flutter_tts: ^3.8.3
+
+  #google maps
+  google_maps_flutter: ^2.2.8
+  flutter_google_street_view: ^3.1.4
   
 
 dev_dependencies:
