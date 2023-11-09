@@ -18,6 +18,31 @@ Future<String> getMessagePlace(String place) async {
   return "Exception:";
 }
 
+Future<String> getCoordsPlace(String place) async {
+  OpenAI opAi = _initOpenAi();
+  final request = ChatCompleteText(
+      model: GptTurbo0301ChatModel(),
+      messages: [
+        Messages(
+            role: Role.system,
+            content:
+                "Tienes que proporcionar unicamente coordenadas de lugares turisticos que hayan en los lugares que te indiquen"),
+        Messages(
+            role: Role.system,
+            content:
+                "El formato debe ser exclusivamente asi, sin agregar mas texto: 37.769263, -122.450727 "),
+        Messages(role: Role.user, content: place)
+      ],
+      maxToken: 200);
+  final response = await opAi.onChatCompletion(request: request);
+  for (var element in response!.choices) {
+    if (element.message != null) {
+      return element.message!.content;
+    }
+  }
+  return "Exception:";
+}
+
 OpenAI _initOpenAi() {
   return OpenAI.instance.build(
     token: _OPEN_API_KEY,

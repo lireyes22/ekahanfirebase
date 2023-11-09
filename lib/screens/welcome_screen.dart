@@ -1,7 +1,7 @@
-import 'package:babylonjs_viewer/babylonjs_viewer.dart';
+//import 'package:babylonjs_viewer/babylonjs_viewer.dart';
 import 'package:flutter/material.dart';
 import 'package:ekahanfirebase/Widgets/button.dart';
-//import 'package:ekahanfirebase/Widgets/logo.dart';
+import 'package:ekahanfirebase/Widgets/logo.dart';
 
 class WelcomeScreen extends StatefulWidget {
   const WelcomeScreen({Key? key}) : super(key: key);
@@ -20,14 +20,14 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
-            SizedBox(
+            /*SizedBox(
               width: 300,
               height: 400,
               child: BabylonJSViewer(
                 src: 'assets/models3D/manati_4.glb',
               ),
-            ),
-            //const Logo(height: 94),
+            ),*/
+            const Logo(height: 94),
             const SizedBox(height: 55),
             ModelButtonPrimary(
               widthFactor: 0.8, // Personaliza el ancho del botón

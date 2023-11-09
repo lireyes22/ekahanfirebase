@@ -55,8 +55,19 @@ Future<List> getInfo(lugarID) async {
   DocumentSnapshot lugarDoc = await getLugar(lugarID);
   String lugar = lugarDoc.get('lugar');
   String message = await getMessagePlace(lugar);
+  String coords = await getCoordsPlace(lugar);
+
+  coords = coords.substring(0, coords.lastIndexOf("W"));
+
+  String px = coords.substring(0, coords.indexOf("°"));
+  String py = coords.substring(coords.indexOf(",") + 1);
+  py = py.substring(0, py.indexOf("°"));
+
   infos.add(lugar);
   infos.add(message);
+  infos.add(coords);
+  infos.add(px.trim());
+  infos.add(py.trim());
   return infos;
 }
 
