@@ -1,5 +1,6 @@
 import 'package:ekahanfirebase/providers/provider_prueba.dart';
-import 'package:ekahanfirebase/screens/buildpack_screen.dart';
+import 'package:ekahanfirebase/screens/info_lugar_screen.dart';
+import 'package:ekahanfirebase/screens/prueba_screen.dart';
 import 'package:flutter/material.dart';
 //Firebase:
 import 'package:firebase_core/firebase_core.dart';
@@ -9,6 +10,7 @@ import 'firebase_options.dart';
 import 'package:ekahanfirebase/screens/home_screen.dart';
 import 'package:ekahanfirebase/screens/login_screen.dart';
 import 'package:ekahanfirebase/screens/register_screen.dart';
+import 'package:ekahanfirebase/screens/packs_screen.dart';
 import 'package:ekahanfirebase/screens/welcome_screen.dart';
 //Tema de color
 //import 'package:ekahanfirebase/themes/theme_dark.dart';
@@ -35,8 +37,10 @@ MaterialApp _home() {
           const RegisterScreen(),
       HomeScreen.routeName: (BuildContext context) => const HomeScreen(),
       WelcomeScreen.routeName: (BuildContext context) => const WelcomeScreen(),
-      BuildPackScreen.routeName: (BuildContext context) =>
-          const BuildPackScreen()
+      PacksScreen.routeName: (BuildContext context) => const PacksScreen(),
+      PruebaScreen.routeName: (BuildContext context) => const PruebaScreen(),
+      InfoLugarScreen.routeName: (BuildContext context) =>
+          const InfoLugarScreen()
     },
   );
 }

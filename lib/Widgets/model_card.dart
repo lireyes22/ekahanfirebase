@@ -8,6 +8,7 @@ class ModelCard extends StatefulWidget {
   final VoidCallback? onTap;
   final VoidCallback? onPressed;
   final bool btnPlus;
+  final Icon icono;
   final List<TextWithConfigs> textWidgets;
   const ModelCard(
       {super.key,
@@ -17,7 +18,8 @@ class ModelCard extends StatefulWidget {
       this.urlImage =
           'https://raw.githubusercontent.com/lireyes22/EkAhanImagesBD/main/nodata.jpg',
       this.onTap,
-      this.onPressed});
+      this.onPressed,
+      this.icono = const Icon(Icons.add, color: Colors.white)});
 
   @override
   State<ModelCard> createState() => _ModelCardState();
@@ -79,7 +81,7 @@ class _ModelCardState extends State<ModelCard> {
                 ),
                 child: IconButton(
                   onPressed: widget.onPressed,
-                  icon: const Icon(Icons.add, color: Colors.white),
+                  icon: widget.icono,
                 ),
               ),
           ],

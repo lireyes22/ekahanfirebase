@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
 class SearchField extends StatefulWidget {
-  const SearchField({super.key});
+  final String txt;
+  const SearchField(
+      {super.key, this.txt = 'Search for train stations or tourist places'});
 
   @override
   State<SearchField> createState() => _SearchFieldState();
@@ -37,7 +39,7 @@ class _SearchFieldState extends State<SearchField> {
             },
             icon: const Icon(Icons.clear, color: Colors.grey),
           ),
-          hintText: 'Search for train stations or tourist places',
+          hintText: widget.txt,
         ),
       ),
     );

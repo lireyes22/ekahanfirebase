@@ -60,7 +60,17 @@ class _ListLugaresState extends State<ListLugares> {
                   String lugarID = lugar['id']; // Acceder al ID del documento
                   Navigator.pushNamed(
                     context,
-                    '/buildpack',
+                    '/pack',
+                    arguments: lugarID,
+                  );
+                },
+                btnPlus: true,
+                icono: const Icon(Icons.view_comfy, color: Colors.white),
+                onPressed: () {
+                  String lugarID = lugar['id']; // Acceder al ID del documento
+                  Navigator.pushNamed(
+                    context,
+                    '/infolugar',
                     arguments: lugarID,
                   );
                 },
