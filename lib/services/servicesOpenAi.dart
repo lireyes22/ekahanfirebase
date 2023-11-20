@@ -1,3 +1,5 @@
+// ignore_for_file: file_names
+
 import 'package:chat_gpt_sdk/chat_gpt_sdk.dart';
 
 // ignore: constant_identifier_names
