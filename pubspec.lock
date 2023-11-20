@@ -241,7 +241,7 @@ packages:
     source: hosted
     version: "2.1.2"
   geocoding_ios:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: geocoding_ios
       sha256: "8f79e380abb640ef4d88baee8bb65390058c802601158d0813dc990b36b189d2"
