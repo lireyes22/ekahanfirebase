@@ -6,6 +6,8 @@ import 'package:ekahanfirebase/services/firebase_service.dart';
 import 'package:ekahanfirebase/services/ttservice.dart';
 import 'package:flutter/material.dart';
 
+//246882
+//202302
 class InfoLugarView extends StatefulWidget {
   const InfoLugarView({super.key});
 
