@@ -667,6 +667,21 @@ PODS:
     - leveldb-library (~> 1.22)
     - nanopb (< 2.30910.0, >= 2.30908.0)
   - Flutter (1.0.0)
+  - flutter_google_street_view (1.0.0):
+    - Flutter
+    - GoogleMaps
+  - flutter_tts (0.0.1):
+    - Flutter
+  - geocoding_ios (1.0.5):
+    - Flutter
+  - google_maps_flutter_ios (0.0.1):
+    - Flutter
+    - GoogleMaps (< 8.0)
+  - GoogleMaps (5.2.0):
+    - GoogleMaps/Maps (= 5.2.0)
+  - GoogleMaps/Base (5.2.0)
+  - GoogleMaps/Maps (5.2.0):
+    - GoogleMaps/Base
   - GoogleUtilities/Environment (7.11.6):
     - PromisesObjC (< 3.0, >= 1.2)
   - GoogleUtilities/Logger (7.11.6):
@@ -747,6 +762,10 @@ DEPENDENCIES:
   - cloud_firestore (from `.symlinks/plugins/cloud_firestore/ios`)
   - firebase_core (from `.symlinks/plugins/firebase_core/ios`)
   - Flutter (from `Flutter`)
+  - flutter_google_street_view (from `.symlinks/plugins/flutter_google_street_view/ios`)
+  - flutter_tts (from `.symlinks/plugins/flutter_tts/ios`)
+  - geocoding_ios (from `.symlinks/plugins/geocoding_ios/ios`)
+  - google_maps_flutter_ios (from `.symlinks/plugins/google_maps_flutter_ios/ios`)
   - webview_flutter_wkwebview (from `.symlinks/plugins/webview_flutter_wkwebview/ios`)
 
 SPEC REPOS:
@@ -757,6 +776,7 @@ SPEC REPOS:
     - FirebaseCore
     - FirebaseCoreInternal
     - FirebaseFirestore
+    - GoogleMaps
     - GoogleUtilities
     - "gRPC-C++"
     - gRPC-Core
@@ -771,6 +791,14 @@ EXTERNAL SOURCES:
     :path: ".symlinks/plugins/firebase_core/ios"
   Flutter:
     :path: Flutter
+  flutter_google_street_view:
+    :path: ".symlinks/plugins/flutter_google_street_view/ios"
+  flutter_tts:
+    :path: ".symlinks/plugins/flutter_tts/ios"
+  geocoding_ios:
+    :path: ".symlinks/plugins/geocoding_ios/ios"
+  google_maps_flutter_ios:
+    :path: ".symlinks/plugins/google_maps_flutter_ios/ios"
   webview_flutter_wkwebview:
     :path: ".symlinks/plugins/webview_flutter_wkwebview/ios"
 
@@ -784,6 +812,11 @@ SPEC CHECKSUMS:
   FirebaseCoreInternal: 2cf9202e226e3f78d2bf6d56c472686b935bfb7f
   FirebaseFirestore: b4c0eaaf24efda5732ec21d9e6c788d083118ca6
   Flutter: f04841e97a9d0b0a8025694d0796dd46242b2854
+  flutter_google_street_view: 40cf05d8d407185e922550f15ab8ad2218c174c6
+  flutter_tts: 0f492aab6accf87059b72354fcb4ba934304771d
+  geocoding_ios: a389ea40f6f548de6e63006a2e31bf66ff80769a
+  google_maps_flutter_ios: abdac20d6ce8931f6ebc5f46616df241bfaa2cfd
+  GoogleMaps: 025272d5876d3b32604e5c080dc25eaf68764693
   GoogleUtilities: 202e7a9f5128accd11160fb9c19612de1911aa19
   "gRPC-C++": 0968bace703459fd3e5dcb0b2bed4c573dbff046
   gRPC-Core: 17108291d84332196d3c8466b48f016fc17d816d

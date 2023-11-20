@@ -47,5 +47,9 @@
 	<true/>
 	<key>io.flutter.embedded_views_preview</key>
 	<true/>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Necesitamos acceder a tu ubicación mientras utilizas la aplicación.</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Necesitamos acceder a tu ubicación en todo momento para proporcionarte servicios de ubicación.</string>
 </dict>
 </plist>
