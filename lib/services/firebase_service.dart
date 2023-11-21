@@ -3,6 +3,7 @@ import 'package:ekahanfirebase/screens/views_info_lugar/air_quality.dart';
 import 'package:ekahanfirebase/services/servicesOpenAi.dart';
 import 'package:geocoding/geocoding.dart';
 
+
 FirebaseFirestore db = FirebaseFirestore.instance;
 
 Future<List> getUsers() async {
@@ -65,7 +66,9 @@ Future<List> getInfo(lugarID) async {
   infos.add(emblematico); //2
 
   //Se obtienen las cordenadas
+  
   List<Location> locations = await locationFromAddress(emblematico);
+
   if (locations.isNotEmpty) {
     Location location = locations.first;
     double latitude = location.latitude;
