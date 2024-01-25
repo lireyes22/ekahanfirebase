@@ -109,7 +109,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       Navigator.pushNamed(context, '');
                     } else {
                       ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
-                        content: Text('Error!'),
+                        content: Text('Error!'), 
                       ));
                     }
                   },
